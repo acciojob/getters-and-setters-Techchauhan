@@ -1,9 +1,47 @@
 //complete this code
-class Person {}
+class Person {
+	constructor(name, age){
+		this._name = name;
+		this._age = age;
+	}
 
-class Student extends Person {}
+	//getter Name
+	get name(){
+		return this._name;
+	}
 
-class Teacher extends Person {}
+	set name(newName){
+		if(newName.length > 0){
+			this._name = newName
+		}else{
+			console.log("Name cannot be empty !")
+		}
+	}
+
+	get age(){
+		return this._age;
+	}
+
+	set age(newAge){
+		if(newAge.length > 0){
+			this._age = newAge
+		} else{
+			console.log("Age must be valid !");
+		}
+	}
+}
+
+class Student extends Person {
+	study(){
+		console.log(`${this.name} is studying`)
+	}
+}
+
+class Teacher extends Person {
+	teach(){
+		console.log(`${this.name} is teaching`)
+	}
+}
 
 // Do not change the code below this line
 window.Person = Person;
